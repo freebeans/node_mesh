@@ -12,4 +12,3 @@ um endereço definido no início do arquivo. São enviados 5 pacotes por segundo
 segundo a interface é varrida para buscar o endereço IPv4 global. A cada varredura, o LED
 da placa muda de estado. Logo, LED piscando à uma taxa de 1Hz é uma indicação de que a placa
 está enviando pacotes (ou ao menos tentando).
->>>>>>> fc552221399fb1a5c543b4f93cff0cf4b2728ebc
