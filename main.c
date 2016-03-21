@@ -38,13 +38,14 @@ int main(void)
 
     /* Usuário escolhe Shell/UDP */ {	
 		printf("Aguardando usuário... ");
-		/* inicializa GPIO do botão */
-		gpio_init(BUTTON_GPIO, GPIO_DIR_IN, GPIO_PULLUP);
+		/* inicializa GPIO do botão como entrada com PULL-UP */
+		gpio_init(BUTTON_GPIO, GPIO_IN_PU);
+		
 
 		/* acende o LED e espera por 3s */
-		LED_ON;
+		LED0_ON;
 		xtimer_usleep(1000000);
-		LED_OFF;
+		LED0_OFF;
 		
 		/* se o usuario pressionar o botão, o programa cai no shell */
 		if(!gpio_read(BUTTON_GPIO)){
@@ -55,9 +56,9 @@ int main(void)
 		
 		/* se o usuario não apertar o botão, começa a cuspir pacotes */
 		xtimer_usleep(1000000);
-		LED_ON;
+		LED0_ON;
 		xtimer_usleep(500000);
-		LED_OFF;
+		LED0_OFF;
 		
 		
 		puts(" enviando pacotes.");
@@ -82,7 +83,7 @@ int main(void)
     uint8_t porta[2] = { (uint8_t) UDP_TARGET_PORT, (((uint16_t) UDP_TARGET_PORT) >> 8) };
 
     while(1){
-		LED_TOGGLE;
+		LED0_TOGGLE;
 		msg[0] = '\0';
 		
 		/* obtem handler da interface */

@@ -12,7 +12,7 @@
 
 
 /* Canal que a interface sem fio deve usar (entre 11 e 26) [número] */
-#define WIRELESS_CHANNEL 26
+#define WIRELESS_CHANNEL 21
 #define PANID 0xBEA1
 /* PAN ID que a interface sem fio deve usar [número] */
 
